@@ -21,10 +21,10 @@ public class Principal extends JFrame implements MenuListener, ActionListener{
 	
 	public void iniciar() {
 		barraMenu = new JMenuBar();
-		abaCadastro = new JMenu("Cadastro");
+		abaCadastro = new JMenu("Inicio");
 		abaSobre = new JMenu("Sobre");
 		itemCadastrar = new JMenuItem("Novo cadastro");
-		itemExibir = new JMenuItem("Exibir cadastro");
+		itemExibir = new JMenuItem("buscar produto cadastrado");
 		itemExcluir = new JMenuItem("Excluir cadastro existente");
 		itemSair = new JMenuItem("Sair");
 		
@@ -46,17 +46,25 @@ public class Principal extends JFrame implements MenuListener, ActionListener{
 		this.setJMenuBar(barraMenu);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
-		this.setLocation(300,300);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 	}
 
 	public static void main(String[] args) {
 		new Principal ("Tela inicial");
+		new Estoque();
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == itemCadastrar) {
 			new Produto("Cadastrar produto");
+		}
+		if(e.getSource() == itemExibir) {
+			Estoque busca = new Estoque();
+			busca.Exibir();
+			
 		}
 		
 		else if(e.getSource() == itemSair) {
