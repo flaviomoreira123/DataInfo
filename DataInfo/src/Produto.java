@@ -74,7 +74,5 @@ public class Produto extends JFrame implements ActionListener{
 			txtQuantidade.setText(null);
 			txtPreco.setText(null);
 		}
-		
 	}
-	
 }
