@@ -76,7 +76,6 @@ public class Principal extends JFrame implements MenuListener, ActionListener{
 	@Override
 	public void menuCanceled(MenuEvent arg0) {
 		
-		
 	}
 
 	@Override
